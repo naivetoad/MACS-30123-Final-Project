@@ -1,4 +1,4 @@
-# Multinomial Logistic Regression and Latent Dirichlet Allocation on arXiv Dataset (Jiazheng Li & Weiwu Yan)
+# Multinomial Logistic Regression and Latent Dirichlet Allocation on arXiv Dataset
 ## [arXiv Dataset](https://www.kaggle.com/datasets/Cornell-University/arxiv)
 ## [Exploratory Data Analyis](https://github.com/macs30123-s24/final-project-arxiv/blob/3edf5ec8382d9f0fc19f41fc0de09ea734f7a080/EDA.ipynb)
 ## [Multinomial Logistic Regression](https://github.com/macs30123-s24/final-project-arxiv/blob/3edf5ec8382d9f0fc19f41fc0de09ea734f7a080/Classification.ipynb)
