@@ -13,6 +13,7 @@ In the modern era of scientific discovery, the dissemination of research finding
 The core research problem addressed in this project is the need to categorize and analyze this vast body of knowledge efficiently. By doing so, we aim to uncover underlying trends, identify prominent research topics, and streamline the process of finding relevant research. This need is particularly acute in the face of global challenges, where rapid and informed responses are essential.
 
 
+
 ### Justification of Large-Scale Computing
 The use of scalable computing methods is crucial for several reasons:
 
@@ -23,6 +24,8 @@ Complexity of Analysis: Advanced techniques like Latent Dirichlet Allocation (LD
 Real-time Processing: With continuous updates to the arXiv repository, real-time data processing is essential to keep analyses current and relevant. Scalable methods facilitate the continuous ingestion and processing of new data, allowing for up-to-date insights.
 
 Resource Optimization: Distributed computing frameworks such as Apache Spark optimize resource utilization through parallel processing, significantly reducing computational load and improving efficiency.
+
+
 
 ### Large-Scale Computing Methods
 Resource Optimization: Distributed computing frameworks such as Apache Spark optimize resource utilization through parallel processing, significantly reducing computational load and improving efficiency.
@@ -46,6 +49,8 @@ Model Training: A Logistic Regression model is trained on the processed data to 
 Model Evaluation: The model's performance is evaluated using accuracy metrics and ROC AUC (Receiver Operating Characteristic Area Under Curve) for each class. This evaluation assesses the model's effectiveness in distinguishing between different scientific fields.
 Visualization of Results
 The results from the topic modeling and classification tasks are visualized to provide clear and interpretable insights. For example, the number of yearly publications by topic is plotted to reveal trends over time. Such visualizations help in identifying patterns and shifts in research focus, making the data more accessible and understandable for researchers.
+
+
 
 ### Conclusion
 This mini project serves as our exploratory work after learning this course. Though mature, it demonstrates the significant potential of scalable computing methods in handling and analyzing large datasets. By leveraging Apache Spark and machine learning techniques, we can extract valuable insights from the extensive arXiv repository, facilitating a better understanding and discovery of scientific research trends. The methodologies employed here are not only applicable to the arXiv dataset but can also be extended to other large-scale datasets across various domains of social science research. This project underscores the importance of scalable computing in modern data analysis, highlighting its role in advancing scientific knowledge and discovery.
