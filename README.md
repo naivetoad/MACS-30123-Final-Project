@@ -17,8 +17,11 @@ The core research problem addressed in this project is the need to categorize an
 The use of scalable computing methods is crucial for several reasons:
 
 Volume of Data: The arXiv repository's 2.5 million articles necessitate robust data processing capabilities to manage large-scale data efficiently. Traditional data analysis tools would be inadequate for handling such a massive dataset within a reasonable timeframe.
+
 Complexity of Analysis: Advanced techniques like Latent Dirichlet Allocation (LDA) for topic modeling and Logistic Regression for classification require substantial computational resources. Scalable computing enables the execution of these complex algorithms on large datasets, ensuring comprehensive analysis.
+
 Real-time Processing: With continuous updates to the arXiv repository, real-time data processing is essential to keep analyses current and relevant. Scalable methods facilitate the continuous ingestion and processing of new data, allowing for up-to-date insights.
+
 Resource Optimization: Distributed computing frameworks such as Apache Spark optimize resource utilization through parallel processing, significantly reducing computational load and improving efficiency.
 
 ### Large-Scale Computing Methods
