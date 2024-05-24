@@ -6,14 +6,14 @@
 ## Report
 
 ## Overview
-This project focuses on leveraging the extensive repository of scholarly articles available on arXiv to extract meaningful insights using scalable computing methods. The arXiv dataset, containing over 2.5 million articles across a multitude of scientific disciplines, presents an invaluable opportunity to explore trends, topics, and classifications in scientific research. Given the dataset's vast size and complexity, this project employs Apache Spark on JupyterHub to ensure efficient data processing and analysis, aiming to make the arXiv more accessible and insightful for researchers and the public alike.
+This project focuses on leveraging the extensive repository of scholarly articles available on arXiv to extract meaningful insights using scalable computing methods. The arXiv dataset, containing over 2.5 million articles across a multitude of scientific disciplines, presents an invaluable opportunity to explore trends, topics, and classifications in scientific research. Given the dataset's vast size and complexity, this project employs Apache Spark on Amazon EMR clusters, writing in JupyterHub notebook, to ensure efficient data processing and analysis. The aim is to make the arXiv more accessible and insightful for researchers and the public alike.
 
 ### Social Problems
 In the modern era of scientific discovery, the dissemination of research findings has accelerated, leading to an overwhelming volume of publications. Researchers often struggle to stay abreast of the latest developments in their fields, and the sheer volume of articles can obscure significant trends and emerging areas of study. The arXiv repository, while a treasure trove of information, exemplifies this challenge due to its extensive and diverse collection of papers.
 The core research problem addressed in this project is the need to categorize and analyze this vast body of knowledge efficiently. By doing so, we aim to uncover underlying trends, identify prominent research topics, and streamline the process of finding relevant research. This need is particularly acute in the face of global challenges, where rapid and informed responses are essential.
 
-### Justification of Large-Scale Computing
 
+### Justification of Large-Scale Computing
 The use of scalable computing methods is crucial for several reasons:
 
 Volume of Data: The arXiv repository's 2.5 million articles necessitate robust data processing capabilities to manage large-scale data efficiently. Traditional data analysis tools would be inadequate for handling such a massive dataset within a reasonable timeframe.
@@ -21,16 +21,11 @@ Complexity of Analysis: Advanced techniques like Latent Dirichlet Allocation (LD
 Real-time Processing: With continuous updates to the arXiv repository, real-time data processing is essential to keep analyses current and relevant. Scalable methods facilitate the continuous ingestion and processing of new data, allowing for up-to-date insights.
 Resource Optimization: Distributed computing frameworks such as Apache Spark optimize resource utilization through parallel processing, significantly reducing computational load and improving efficiency.
 
-
 ### Large-Scale Computing Methods
-
-The project begins with data extraction from an S3 bucket, using Apache Spark to read and process the JSON files containing the arXiv dataset. Initial exploratory data analysis (EDA) helps understand the dataset's structure and basic statistics, providing a foundation for subsequent analyses.
-
 Resource Optimization: Distributed computing frameworks such as Apache Spark optimize resource utilization through parallel processing, significantly reducing computational load and improving efficiency.
 
-Large-Scale Computing Methods Employed
-Data Extraction and Initial Exploration
-The project begins with data extraction from an S3 bucket, using Apache Spark to read and process the JSON files containing the arXiv dataset. Initial exploratory data analysis (EDA) helps understand the dataset's structure and basic statistics, providing a foundation for subsequent analyses.
+The project begins with data extraction from an S3 bucket, using Apache Spark on Amazon EMR clusters to read and process the JSON files containing the arXiv dataset. The EMR cluster configuration includes r5.xlarge instances, each providing 4 vCores and 32 GiB of memory. This robust setup ensures that the large volumes of data can be handled efficiently, allowing for rapid data processing and analysis.
+Initial exploratory data analysis (EDA) helps understand the dataset's structure and basic statistics, providing a foundation for subsequent analyses. Utilizing the scalable infrastructure provided by AWS EMR, the project efficiently handles the extensive data, ensuring that the computational resources are utilized effectively. This setup enables the processing of the arXiv dataset's substantial size, ensuring that the analysis remains efficient and effective.
 
 1. Topic Modeling with LDA
 Latent Dirichlet Allocation (LDA) is employed to uncover the underlying topics within the abstracts of the articles. The process involves several critical steps:
@@ -50,4 +45,4 @@ Visualization of Results
 The results from the topic modeling and classification tasks are visualized to provide clear and interpretable insights. For example, the number of yearly publications by topic is plotted to reveal trends over time. Such visualizations help in identifying patterns and shifts in research focus, making the data more accessible and understandable for researchers.
 
 ### Conclusion
-This project demonstrates the significant potential of scalable computing methods in handling and analyzing large datasets. By leveraging Apache Spark and machine learning techniques, we can extract valuable insights from the extensive arXiv repository, facilitating a better understanding and discovery of scientific research trends. The methodologies employed here are not only applicable to the arXiv dataset but can also be extended to other large-scale datasets across various domains of social science research. This project underscores the importance of scalable computing in modern data analysis, highlighting its role in advancing scientific knowledge and discovery.
+This mini project serves as our exploratory work after learning this course. Though mature, it demonstrates the significant potential of scalable computing methods in handling and analyzing large datasets. By leveraging Apache Spark and machine learning techniques, we can extract valuable insights from the extensive arXiv repository, facilitating a better understanding and discovery of scientific research trends. The methodologies employed here are not only applicable to the arXiv dataset but can also be extended to other large-scale datasets across various domains of social science research. This project underscores the importance of scalable computing in modern data analysis, highlighting its role in advancing scientific knowledge and discovery.
