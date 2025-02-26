@@ -1,9 +1,8 @@
 # Multinomial Logistic Regression and Latent Dirichlet Allocation on arXiv Dataset
-## [arXiv Dataset](https://www.kaggle.com/datasets/Cornell-University/arxiv)
+## [Dataset](https://www.kaggle.com/datasets/Cornell-University/arxiv)
 ## [Exploratory Data Analyis](https://github.com/macs30123-s24/final-project-arxiv/blob/3edf5ec8382d9f0fc19f41fc0de09ea734f7a080/EDA.ipynb)
 ## [Multinomial Logistic Regression](https://github.com/macs30123-s24/final-project-arxiv/blob/3edf5ec8382d9f0fc19f41fc0de09ea734f7a080/Classification.ipynb)
 ## [Latent Dirichlet Allocation](https://github.com/macs30123-s24/final-project-arxiv/blob/3edf5ec8382d9f0fc19f41fc0de09ea734f7a080/LDA.ipynb)
-## Report
 
 ## Overview
 This project aims to harness the rich repository of scholarly articles from arXiv, available as a public dataset on Kaggle, which includes metadata for approximately 2.5 million articles spanning various scientific disciplines. By leveraging scalable computing methods, specifically Apache Spark implemented via Amazon EMR clusters in JupyterHub notebooks, this initiative seeks to process and analyze the dataset efficiently. The objective is to uncover shifts and trends in scientific research, making the arXiv metadata more accessible and insightful not only for researchers but also for a broader audience interested in academic developments.
