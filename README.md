@@ -1,34 +1,55 @@
-# Multinomial Logistic Regression and Latent Dirichlet Allocation on arXiv Dataset
-## [Dataset](https://www.kaggle.com/datasets/Cornell-University/arxiv)
-## [Exploratory Data Analyis](https://github.com/macs30123-s24/final-project-arxiv/blob/3edf5ec8382d9f0fc19f41fc0de09ea734f7a080/EDA.ipynb)
-## [Multinomial Logistic Regression](https://github.com/macs30123-s24/final-project-arxiv/blob/3edf5ec8382d9f0fc19f41fc0de09ea734f7a080/Classification.ipynb)
-## [Latent Dirichlet Allocation](https://github.com/macs30123-s24/final-project-arxiv/blob/3edf5ec8382d9f0fc19f41fc0de09ea734f7a080/LDA.ipynb)
+# ArXiv Scholarly Article Analysis
 
-## Overview
-This project aims to harness the rich repository of scholarly articles from arXiv, available as a public dataset on Kaggle, which includes metadata for approximately 2.5 million articles spanning various scientific disciplines. By leveraging scalable computing methods, specifically Apache Spark implemented via Amazon EMR clusters in JupyterHub notebooks, this initiative seeks to process and analyze the dataset efficiently. The objective is to uncover shifts and trends in scientific research, making the arXiv metadata more accessible and insightful not only for researchers but also for a broader audience interested in academic developments.
+This project focuses on extracting, processing, and analyzing a large dataset 
+of scholarly articles from arXiv, leveraging big data technologies and machine 
+learning models to uncover trends and categorize research fields.
 
-### Social Problems
-In the contemporary landscape of scientific discovery, the rapid dissemination of research findings has resulted in an overwhelming proliferation of publications. This deluge makes it increasingly challenging for researchers to keep pace with new developments within their fields, as significant trends and nascent areas of study can be obscured by the sheer volume of information. The arXiv dataset epitomizes this challenge with its extensive and eclectic collection of scholarly articles. This project addresses the critical need to efficiently categorize and analyze this vast repository of knowledge. Utilizing advanced computational techniques, the aim is to elucidate underlying trends, pinpoint key research topics, and facilitate the discovery of pertinent studies. This capability is crucial in addressing global challenges, where swift and well-informed scientific responses are imperative. By improving the accessibility and navigability of the arXiv dataset, this project seeks to enhance the scientific community's ability to engage with and build upon existing research efficiently.
+## Data Extraction and Processing
 
-### Justification of Large-Scale Computing
-The use of scalable computing methods is crucial for several reasons:
+The project begins with extracting data from an Amazon S3 bucket, which 
+contains approximately 1.7 million scholarly articles in JSON format. The 
+dataset is processed using Apache Spark on Amazon EMR clusters configured with 
+eight r5.xlarge instances, each equipped with 4 vCores and 32 GiB of memory, 
+ensuring efficient handling of large-scale data.
 
-1. Volume of Data: The arXiv dataset, comprising approximately 2.5 million scholarly articles, demands powerful data processing capabilities to handle such extensive volumes efficiently. Traditional data analysis tools are often inadequate for managing this scale of data within a practical timeframe, necessitating more robust solutions.
+## [Exploratory Data Analysis](EDA.ipynb) (EDA)
 
-2. Complexity of Analysis: Employing sophisticated analytical techniques, such as Latent Dirichlet Allocation for topic modeling and Logistic Regression for classification, requires significant computational power. Scalable computing facilitates the application of these complex algorithms on large datasets, enabling thorough and detailed analyses.
+An initial phase of Exploratory Data Analysis is conducted to understand the 
+dataset’s structure and key statistical insights. 
 
-3. Real-time Processing: Scalable computing, particularly through distributed computing frameworks like Apache Spark, enhances resource efficiency. By enabling parallel processing, these frameworks reduce the computational load and increase processing speed, optimizing overall system performance and resource utilization. This capability is critical in leveraging computational resources effectively and achieving comprehensive data analysis outcomes.
+Findings include:
+1. Physics is the most published field, followed by Mathematics, Computer 
+Science, and Astronomy.
+2. Significant publication surges occurred in 2009, 2015, and 2023.
+3. Computer Science grew from being the least studied field in 2007 to the most 
+studied field in 2024.
 
-4. Resource Optimization: Scalable computing, particularly through distributed computing frameworks like Apache Spark, enhances resource efficiency. By enabling parallel processing, these frameworks reduce the computational load and increase processing speed, optimizing overall system performance and resource utilization. This capability is critical in leveraging computational resources effectively and achieving comprehensive data analysis outcomes.
+## [Latent Dirichlet Allocation](LDA.ipynb) (LDA)
 
-### Large-Scale Computing Methods
-The project initiates with the extraction of data from an Amazon S3 bucket, where the arXiv dataset is stored in JSON format. This dataset is then processed using Apache Spark deployed on Amazon EMR clusters. Our configuration for the EMR cluster includes eight r5.xlarge instances, with each instance equipped with 4 vCores and 32 GiB of memory, providing substantial computational capacity to manage the dataset efficiently.
+The project utilizes Latent Dirichlet Allocation to uncover latent topics 
+within article abstracts. 
 
-The initial phase involves exploratory data analysis, which serves to understand the structure and basic statistics of the dataset. This foundational analysis is crucial for identifying the data’s characteristics and potential challenges that may arise during deeper analytical processes.
+The process includes:
+1. Preprocessing – Text normalization, punctuation removal, tokenization, and 
+stopword filtering.
+2. Vectorization – Converting text into numerical representations for analysis.
+3. Topic Identification – Training the LDA model to extract underlying research 
+themes.
 
-The project employs Latent Dirichlet Allocation (LDA) to discover the underlying topics within the abstracts of articles from the arXiv dataset. The LDA process involves several meticulous steps: First, data preprocessing ensures uniformity by converting text to lowercase, removing punctuation, and eliminating trailing spaces. Next, the text is tokenized into individual words, and common stop words are removed to enhance topic modeling quality. The processed text is then vectorized, turning it into numerical vectors suitable for machine learning. A streamlined pipeline facilitates the processing steps, and the LDA model is subsequently trained on this vectorized data to identify latent topics. These topics reveal the primary themes and trends within the dataset, offering insights into the distribution of research topics over time. The extracted topics are analyzed and visualized, with the number of yearly publications per topic plotted to trace trends and the evolution of various research areas.
+LDA results confirm the growing prominence of Computer Science, surpassing 
+Astronomy, Mathematics, and Physics as the dominant field from 2007 to 2024.
 
-Additionally, a Multinomial Logistic Regression model is developed to categorize articles into predefined scientific fields based on their abstracts. This process begins with data preprocessing, similar to that of the LDA but includes additional steps to handle categorical labels for different scientific fields. A comprehensive pipeline is established, incorporating tokenization, stop words removal, vectorization, and label indexing, ensuring a consistent approach to data preparation. The Logistic Regression model is trained on this prepared data to classify articles accurately into various fields. This classification aids in understanding the distribution of research across disciplines. The model's performance is evaluated using accuracy metrics and the ROC AUC (Receiver Operating Characteristic Area Under Curve) for each class. This assessment, along with visualizations, helps evaluate the effectiveness of the model in distinguishing between different scientific fields.
+## [Multinomial Logistic Regression](MLR.ipynb) (MLR)
 
-### Conclusion
-While the methodologies used are well-established, they effectively demonstrate the substantial potential of scalable computing methods for managing and analyzing large datasets. By utilizing Apache Spark alongside sophisticated machine learning techniques, we have been able to extract meaningful insights from the vast arXiv dataset. This enables a deeper understanding and identification of scientific research trends. The approaches adopted in this project are not limited to the arXiv dataset; they can be readily applied to other large-scale datasets within various fields of social science research. This endeavor highlights the critical role of scalable computing in contemporary data analysis, underscoring its significance in propelling scientific knowledge and discovery forward.
+To classify articles into predefined research fields, a Multinomial Logistic 
+Regression model is trained using abstract text. 
+
+The pipeline includes:
+1. Preprocessing – Tokenization, stopword removal, vectorization, and 
+categorical label encoding.
+2. Model Training – Training the MLR model to classify articles into research 
+fields.
+3. Evaluation – Performance assessment using accuracy and ROC AUC metrics.
+
+The final model achieved a test accuracy of 0.86, effectively classifying 
+research articles across disciplines.
