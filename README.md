@@ -55,5 +55,5 @@ The final model achieved a test accuracy of 0.86, effectively classifying
 research articles across disciplines.
 
 ## Contributors
-- [Li, JiaZheng](https://github.com/Vindmn1234)
+- [Li, Jiazheng](https://github.com/Vindmn1234)
 - [Yan, Weiwu](https://github.com/naivetoad)
